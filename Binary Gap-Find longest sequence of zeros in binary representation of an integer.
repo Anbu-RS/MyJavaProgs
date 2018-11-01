@@ -1,0 +1,39 @@
+// you can also use imports, for example:
+// import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+class Solution {
+    public int solution(int N) {
+        // write your code in Java SE 8
+        int loopCount=0,num=N,res=0;
+        int binaryGap=0;
+        for (int i=num;num>0;num=num/2)
+        { 
+            if( ( num % 2) == 0 ) 
+            {
+                if (loopCount == 1 )
+                {
+                    res=res+1;
+                }
+                
+            }
+            else if (( num % 2) == 1 )
+            {
+               loopCount=loopCount+1;
+               if (loopCount == 2 )
+               {
+                   if (res>binaryGap)
+                   {
+                   binaryGap=res;
+                   }
+                   loopCount = 1;
+                    res  = 0;
+               }
+            }
+        
+        }
+    return binaryGap;
+    } 
+}
