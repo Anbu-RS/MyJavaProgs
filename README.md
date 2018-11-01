@@ -1,2 +1,2 @@
 # MyJavaProgs
-Java programs 
+Java programs for newbies learning Java programing.
