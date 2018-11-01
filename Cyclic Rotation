@@ -1,0 +1,50 @@
+// you can also use imports, for example:
+// import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+class Solution {
+    public int[] solution(int[] A, int K) 
+    {
+        // write your code in Java SE 8
+        int Alen=A.length, kShift=0;
+        int[] sArray;
+        //System.out.println("Alen=" + Alen);
+        if (Alen == 0 || A == null)
+        {
+            System.out.println("Array is empty");
+            sArray=A;
+        }
+        else
+        {
+            sArray= new int[Alen];
+            //to find actual shifts to be done fo the array
+            kShift=K % Alen;
+            //System.out.println("kShift"+kShift);
+            //logic for right shifting the array elements K times.
+            if (kShift == 0  )
+            {
+                sArray=A;
+            }
+            else 
+            {
+                for ( int i= 0; i < Alen; i++)
+                {
+                    int j = i+kShift;
+                    if (j < Alen)
+                    {
+                    sArray[j] = A[i]; 
+                    }
+                    else if (j >= Alen)
+                    {
+                    int x = j-Alen;
+                    //System.out.println("x"+x);
+                    sArray[x] = A[i];   
+                    }
+                }   
+            }
+            
+        }
+        return sArray; 
+    }
